@@ -1,13 +1,16 @@
 package com.rongzi.ms.step_definitions.web;
-
+import com.rongzi.ms.pageobjects.web.RecommendLoanPage;
 import com.rongzi.ms.pageobjects.web.RongziLoginPage;
 import com.rongzi.ms.pageobjects.web.RongziPage;
 import com.rongzi.ms.step_definitions.StepDefs;
-import cucumber.api.java.zh_cn.假如;
+import cucumber.api.PendingException;
 import cucumber.api.java.zh_cn.并且;
 import cucumber.api.java.zh_cn.当;
 import cucumber.api.java.zh_cn.那么;
+import org.junit.Assert;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * Created by lining on 2017/6/28.
@@ -20,31 +23,25 @@ public class RongziLoginSteps extends StepDefs {
 
         PageFactory.initElements(driver, RongziPage.class);
         RongziPage.login_please.click();
+        RongziPage.smscode_login.click();
 
-    }
-
-    @那么("^进入登陆页面$")
-    public void 进入登陆页面() throws Throwable {
-        PageFactory.initElements(driver, RongziLoginPage.class);
-
-    }
-
-    @假如("^点击登陆按钮$")
-    public void 点击登陆按钮() throws Throwable {
-        PageFactory.initElements(driver, RongziPage.class);
-        RongziLoginPage.login.click();
     }
 
     @并且("^填写登陆信息$")
     public void 填写登陆信息() throws Throwable {
+        PageFactory.initElements(driver, RongziLoginPage.class);
         RongziLoginPage.telephone.sendKeys("18321950423");
-        RongziLoginPage.password.sendKeys("yzc32323232");
-        RongziLoginPage.verCode.sendKeys("1111");
+        RongziLoginPage.graphic_verification_code.sendKeys("1234");
+        RongziLoginPage.smsCode.sendKeys("123456");
+        RongziLoginPage.login.click();
     }
 
-    @那么("^登陆成功$")
-    public void 登陆成功() throws Throwable {
-        // TODO: 2017/8/5 assert login success
-    }
 
+    @cucumber.api.java.zh_cn.那么("^成功登录$")
+    public void 成功登录() throws Throwable {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOf(RongziPage.username));
+        PageFactory.initElements(driver,RongziPage.class);
+        Assert.assertTrue(RongziPage.username.isDisplayed());
+    }
 }

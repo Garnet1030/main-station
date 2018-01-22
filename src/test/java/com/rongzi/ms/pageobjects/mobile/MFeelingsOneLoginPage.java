@@ -13,12 +13,6 @@ public class MFeelingsOneLoginPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"currentCity\"]")
-	public static WebElement city;
-
-	@FindBy(how=How.XPATH, using="//*[@id=\"SHANGHAI\"]")
-	public static WebElement shanghai;
-
 	@FindBy(how=How.XPATH, using="//*[@id=\"userName\"]")
 	public static WebElement username;
 
@@ -34,7 +28,13 @@ public class MFeelingsOneLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"inputSmsCode\"]")
 	public static WebElement smsCode;
 
+	public static class CityPage {
 
+		@FindBy(how=How.XPATH, using="//*[@id=\"BEIJING\"]")
+		public static WebElement city;
+
+
+	}
 
 
 }

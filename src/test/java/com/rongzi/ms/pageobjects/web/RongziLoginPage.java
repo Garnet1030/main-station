@@ -13,17 +13,19 @@ public class RongziLoginPage extends BaseClass {
 		super(driver);
 	}
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"telephone\"]")
+	@FindBy(how=How.XPATH, using="//*[@id=\"login_telephone\"]")
 	public static WebElement telephone;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"password\"]")
-	public static WebElement password;
+	@FindBy(how=How.XPATH, using="//*[@id=\"smsVerCode\"]")
+	public static WebElement graphic_verification_code;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"verCode\"]")
-	public static WebElement verCode;
+	@FindBy(how=How.XPATH, using="//*[@id=\"SmsCode\"]")
+	public static WebElement smsCode;
 
-	@FindBy(how=How.XPATH, using="//*[@id=\"loginSub1\"]")
+	@FindBy(how=How.XPATH, using="//*[@id=\"loginSub2\"]")
 	public static WebElement login;
+
+
 
 
 

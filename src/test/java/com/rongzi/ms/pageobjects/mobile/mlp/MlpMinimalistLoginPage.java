@@ -1,4 +1,4 @@
-package com.rongzi.ms.pageobjects.mobile;
+package com.rongzi.ms.pageobjects.mobile.mlp;
 
 import com.rongzi.ms.pageobjects.BaseClass;
 import org.openqa.selenium.WebDriver;
@@ -6,17 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class MMinimalistLoginPage extends BaseClass {
+public class MlpMinimalistLoginPage extends BaseClass {
 
-	public MMinimalistLoginPage(WebDriver driver)
+	public MlpMinimalistLoginPage(WebDriver driver)
 	{
 		super(driver);
 	}
 	@FindBy(how=How.XPATH, using="//*[@id=\"app\"]/div/div/div[1]/div[1]/div[2]/span")
 	public static WebElement city;
-
-	@FindBy(how=How.XPATH, using="//*[@id=\"app\"]/div/div/div[2]/div/ul[1]/li[3]/a")
-	public static WebElement shanghai;
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"app\"]/div/div/div[1]/div[2]/div/div[2]/input")
 	public static WebElement username;
@@ -33,6 +30,15 @@ public class MMinimalistLoginPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"smsCode\"]")
 	public static WebElement smsCode;
 
+	public static class CityPage {
+
+
+
+		@FindBy(how=How.XPATH, using="//*[@id=\"app\"]/div/div/div[2]/div/ul[1]/li[3]/a")
+		public static WebElement city;
+
+
+	}
 
 
 

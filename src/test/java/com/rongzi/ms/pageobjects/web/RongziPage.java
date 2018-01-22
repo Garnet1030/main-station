@@ -16,6 +16,12 @@ public class RongziPage extends BaseClass {
 	@FindBy(how=How.XPATH, using="//*[@id=\"ul_login\"]/li[2]/a")
 	public static WebElement login_please;
 
+	@FindBy(how=How.XPATH, using="/html/body/div[3]/div/div/div/span[2]")
+	public static WebElement smscode_login;
+
+	@FindBy(how=How.XPATH, using="//*[@id=\"ul_login\"]/li[2]/a[1]/b")
+	public static WebElement username;
+
 
 	@FindBy(how=How.XPATH, using="//*[@id=\"caseShowBanner\"]/ul/li[1]/a")
 	public static WebElement apply;

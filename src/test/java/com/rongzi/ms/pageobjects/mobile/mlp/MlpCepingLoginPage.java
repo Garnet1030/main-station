@@ -1,4 +1,4 @@
-package com.rongzi.ms.pageobjects.mobile;
+package com.rongzi.ms.pageobjects.mobile.mlp;
 
 import com.rongzi.ms.pageobjects.BaseClass;
 import org.openqa.selenium.WebDriver;
@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class MCepingLoginPage extends BaseClass {
+public class MlpCepingLoginPage extends BaseClass {
 
-    public MCepingLoginPage(WebDriver driver) {
+    public MlpCepingLoginPage(WebDriver driver) {
         super(driver);
     }
 
